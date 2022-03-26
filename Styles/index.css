@@ -1,11 +1,43 @@
 body {
   margin-top: 80px;
-  font-family: "Roboto, Sans-Serif";
+  font-family: "Rubik", sans-serif;
 }
 
 nav {
   margin-left: 50px;
   /* margin-top: 70px; */
+}
+
+input[type="button"] {
+  margin-top: 500px;
+}
+
+#v-pills-tab {
+  height: 900px;
+}
+
+#pro-pic {
+  width: 170px;
+  height: 150px;
+  margin-bottom: 0px;
+  display: block;
+}
+
+#acc-form {
+  border-top: solid 1px rgb(235, 235, 235);
+  padding: 20px 0px;
+  margin-top: 25px;
+  display: block;
+}
+
+input[type="email"],
+input[type="text"] {
+  width: 612px;
+}
+
+.heading-nav {
+  margin-left: 0px;
+  width: 100%;
 }
 
 .container {
@@ -16,6 +48,7 @@ nav {
   border: 2px solid #03191e;
   background-color: #03191e;
   color: white;
+  transition: 0.5s;
 }
 
 .btn:hover {
