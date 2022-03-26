@@ -133,7 +133,9 @@ session_start();
                 <!-- <div class="img-right d-none d-md-flex">
                     <img id="signupimg" src="images/greenforce-staffing-bYZn_C-RswQ-unsplash.jpg" alt="">
                 </div> -->
-                <?php
+
+                <div class="card-body">
+                    <?php
                 if(isset($error)){
                     
                     echo '<div class="alert alert-danger" role="alert">
@@ -148,7 +150,6 @@ session_start();
                     echo "";
                 }
             ?>
-                <div class="card-body">
                     <h2 class="title text-center mt-4">Welcome! To Farmers Bank</h2>
                     <h3 class="title text-center mt-4">Let's get started</h3>
                     <p class="text-center">Please enter your information</p>
@@ -157,24 +158,26 @@ session_start();
                             <div class="container">
                                 <div class="row">
                                     <span><i class="fa fa-key"></i></span>
-                                    <div class="col">
+                                    <div class="col-md-6 form-input">
                                         <label for="fname">First Name</label>
-                                        <input type="text" name="fname" id="fname" placeholder="Enter first name" required />
+                                        <input type="text" name="fname" id="fname" placeholder="Enter first name"
+                                            required />
                                     </div>
-                                    <div class="col">
+                                    <div class="col-md-6 form-input">
                                         <label for="lname">Last Name</label>
-                                        <input type="text" name="lname" id="lname" placeholder="Enter last name" required />
+                                        <input type="text" name="lname" id="lname" placeholder="Enter last name"
+                                            required />
                                     </div>
                                     <div class="form-input">
                                         <span><i class="fa fa-envelope-o"></i></span>
                                         <label for="email">Email</label>
-                                        <input type="email" name="email" id="email" placeholder="Email"
-                                            required />
+                                        <input type="email" name="email" id="email" placeholder="Email" required />
                                     </div>
                                     <div class="form-input">
                                         <span><i class="fa fa-key"></i></span>
                                         <label for="password">Password</label>
-                                        <input type="password" name="password" id="password" placeholder="Password" required />
+                                        <input type="password" name="password" id="password" placeholder="Password"
+                                            required />
                                     </div>
                                     <div class="mb-3">
                                         <button type="submit" class="btn btn-block text-uppercase">

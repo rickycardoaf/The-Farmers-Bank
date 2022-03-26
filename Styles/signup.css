@@ -12,6 +12,7 @@
   font-weight: lighter;
 } */
 
+label[for="email"],
 label[for="password"],
 label[for="user_name"],
 label[for="fname"],
