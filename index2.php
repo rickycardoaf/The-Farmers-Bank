@@ -41,14 +41,16 @@ if(isset($_POST['logout'])){
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap"
+        rel="stylesheet">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="Styles/index.css">
-   
+
     <title><?php
     
     if(isset($_SESSION['Email_Address'])){
@@ -61,7 +63,7 @@ if(isset($_POST['logout'])){
 </head>
 
 <body>
-<?php
+    <?php
                 if(isset($error)){
                     
                     echo '<div class="alert alert-danger" role="alert">
@@ -95,13 +97,14 @@ if(isset($_POST['logout'])){
                 type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Accounts</button>
             <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings"
                 type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</button>
-                <input type="button" aria-selected="false" class="btn btn-primary" value="Log me out" onclick=" relocate_home()">
-
+            <section class="d-flex flex-column-reverse">
+                <input type="button" aria-selected="false" class="btn btn-primary mb-auto" value="Log Out"
+                    onclick=" relocate_home()">
+            </section>
             <script>
-            function relocate_home()
-            {
+            function relocate_home() {
                 location.href = "logout.php";
-            } 
+            }
             </script>
         </nav>
         <main class="container">
@@ -128,7 +131,7 @@ if(isset($_POST['logout'])){
                                 <div class="card-body">
                                     <h5 class="card-title">Total Balance:</h5>
                                     <p class="card-text">
-                                    <?php
+                                        <?php
                                     $accBalanceCheck = mysqli_query($con, "SELECT accountBalance FROM accountSum WHERE user_id = '".$_SESSION['User_Id']."'");
 
                                     if($accBalanceCheck){
@@ -182,8 +185,8 @@ if(isset($_POST['logout'])){
                                     </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <?php
+                                    <tr>
+                                        <?php
                                     
                                         $checkForAccount = mysqli_query($con, "SELECT transaction_date, transaction_amount,transaction_type, transaction_processtype  FROM transactions WHERE user_id = '".$_SESSION['User_Id']."'");
 
@@ -273,10 +276,71 @@ if(isset($_POST['logout'])){
                                     aria-labelledby="pills-contact-tab">...</div>
                             </div>
                         </section>
+
+                        <!--Accounts Tab-->
                         <section class="tab-pane fade" id="v-pills-messages" role="tabpanel"
                             aria-labelledby="v-pills-messages-tab">
-                            ...
+                            <nav class="navbar navbar-light">
+                                <div class="container-fluid">
+                                    <a class="navbar-brand">
+                                        <h3>Accounts</h3>
+                                    </a>
+                                </div>
+                                <section class="row">
+                                    <h6>Photo</h6>
+                                    <img id="pro-pic" class="img-fluid" src="images/585e4bf3cb11b227491c339a.png"
+                                        class="rounded float-start" alt="...">
+                                </section>
+
+                                <!--Accounts page form-->
+                                <section id="acc-form" class="row">
+                                    <form class="row g-3">
+                                        <div class="col-md-12">
+                                            <label for="inputEmail4" class="form-label">Email</label>
+                                            <input type="email" class="form-control acc-input" id="inputEmail4"
+                                                value="(User's Email)" readonly>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label for="fullname" class="form-label">First and Last Name</label>
+                                            <input type="text" class="form-control" id="fullname">
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="inputAddress" class="form-label">Address</label>
+                                            <input type="text" class="form-control" id="inputAddress"
+                                                placeholder="1234 Main St">
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="inputAddress2" class="form-label">Address 2</label>
+                                            <input type="text" class="form-control" id="inputAddress2"
+                                                placeholder="Apartment, studio, or floor">
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label for="inputCity" class="form-label">City</label>
+                                            <input type="text" class="form-control" id="inputCity">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="inputState" class="form-label">State</label>
+                                            <select id="inputState" class="form-select">
+                                                <option selected>Choose...</option>
+                                                <option>...</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="gridCheck">
+                                                <label class="form-check-label" for="gridCheck">
+                                                    I agree to changes made
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                                        </div>
+                                    </form>
+                                </section>
                         </section>
+
                         <section class="tab-pane fade" id="v-pills-settings" role="tabpanel"
                             aria-labelledby="v-pills-settings-tab">
                             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde architecto ex, natus atque
