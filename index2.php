@@ -198,10 +198,29 @@ if(isset($_POST['logout'])){
                         </div>
                         <div class="col-sm-6">
                             <div class="card text-white bg-primary mb-3">
-                                <div class="card-header">Header</div>
+                                <div class="card-header">Account numbers</div>
                                 <div class="card-body">
-                                    <h5 class="card-title">Total Balance:</h5>
-                                    <p class="card-text">$10,000.00</p>
+                                    
+                                    <p class="card-text">
+                                         <?php
+                                    $accBalanceCheck = mysqli_query($con, "SELECT User_Id FROM Users WHERE user_id = '".$_SESSION['User_Id']."'");
+
+                                    if($accBalanceCheck){
+                                
+                                        if(mysqli_num_rows($accBalanceCheck) > 0 ){
+                                            
+                                            while($row = mysqli_fetch_assoc($accBalanceCheck)) {
+                                                   
+                                                    echo $row['User_Id'];
+                                                    
+                                                }
+                                        }
+                                    }
+
+                                    //mysqli_close($con);
+                                    ?>
+                                        
+                                    </p>
                                 </div>
                             </div>
                         </div>
