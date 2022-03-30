@@ -169,8 +169,7 @@ if(isset($_POST['logout'])){
         <nav class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
-                    <img src="images/logo.jpg" alt="" width="30" height="24"
-                        class="d-inline-block align-text-top">
+                    <img src="images/logo.jpg" alt="" width="30" height="24" class="d-inline-block align-text-top">
                     Farmers Bank
                 </a>
             </div>
@@ -495,23 +494,26 @@ if(isset($_POST['logout'])){
                                         <h5>Change Password</h5>
                                     </a>
                                 </div>
-                       <section class="row">
+                                <section class="row">
                                     <form class="row g-3" method="POST">
 
-                                        
+
                                         <div class="col-md-12">
                                             <label for="newpassword1" class="form-label">New Password</label>
-                                            <input type="password" class="form-control" id="newpassword1" name="newpassword1">
+                                            <input type="password" class="form-control" id="newpassword1"
+                                                name="newpassword1">
                                         </div>
                                         <div class="col-12">
                                             <label for="newpassword2" class="form-label">Re-Enter Password</label>
-                                            <input type="password" class="form-control" id="newpassword2" name="newpassword2">
+                                            <input type="password" class="form-control" id="newpassword2"
+                                                name="newpassword2">
                                         </div>
 
 
-                                       
+
                                         <div class="col-12">
-                                            <button type="submit" id="chanBtn"  name="chanBtn" class="btn btn-primary">Change Password</button>
+                                            <button type="submit" id="chanBtn" name="chanBtn"
+                                                class="btn btn-primary">Change Password</button>
                                         </div>
                                     </form>
                                 </section>
