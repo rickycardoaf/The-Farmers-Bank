@@ -25,7 +25,12 @@ session_start();
         $uppC = preg_match('@[A-Z]@', $password);
         $number = preg_match('@[0-9]@', $password);
 
-        // validate fielf on the signup page
+            
+                    
+                   
+
+    
+        //validate fielf on the signup page
         if($fname == "" || $lname == ""){
             $error = "Your name is required";
         }elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -62,15 +67,35 @@ session_start();
             }else{
                 
 
+               $user_id = random_num(10);
+               
                
                     //save to database 
                     $password_hashed = password_hash($password, PASSWORD_DEFAULT);
-                    $user_id = uniqid();
+                    
+                    
                     date_default_timezone_set("Jamaica");
                     $date = date("d/M/Y --- h:i:sa");
                     $query = "INSERT INTO Users (User_Id,First_Name, Last_Name,Email_Address, User_Password, Reg_date) values ('$user_id', '$fname', '$lname','$email','$password_hashed', '$date')";
 
                     if(mysqli_query($con, $query)){
+                        
+                         $checkForuser_id = mysqli_query($con, "SELECT U_TableId FROM Users WHERE Email_Address = '".$email."'");
+        
+                        if(mysqli_num_rows($checkForuser_id) > 0){
+            
+                            while($row = mysqli_fetch_assoc($checkForuser_id)){
+            
+                                // $dbuname = $row['user_name'];
+                                $dbUser_Id = $row['U_TableId'];
+            
+                              }
+                            
+                        }
+    $userNew_Id = $fname[0].$lname[0].$email[0]."-".$dbUser_Id."-".$user_id;
+                        $updateUserInfo = mysqli_query($con, "UPDATE Users SET User_Id = '".$userNew_Id."' WHERE U_TableId = '".$dbUser_Id."'");
+            
+            
                         mysqli_close($con);
                         $success = "Account created";
                         $name = "";

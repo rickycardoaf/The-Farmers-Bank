@@ -21,10 +21,10 @@ $userEM = "";
  
         $userEM = $_SESSION['Email_Address'];
         $userLgId = $_SESSION['User_Id'];
-        echo $_SESSION['Email_Address']."<br>";
-                            echo $_SESSION['User_Id']."<br>";
-                            echo $_SESSION['fName']."<br>";
-                            echo $_SESSION['lName'];
+        // echo $_SESSION['Email_Address']."<br>";
+        //                     echo $_SESSION['User_Id']."<br>";
+        //                     echo $_SESSION['fName']."<br>";
+        //                     echo $_SESSION['lName'];
         
     }
     
@@ -41,17 +41,30 @@ if(isset($_POST['logout'])){
 }
 
     if(isset($_POST['saveBtn'])){
+        $streetNN = mysqli_real_escape_string($con, $_POST['streetNN']);
+        $cityt = mysqli_real_escape_string($con, $_POST['cityT']);
+        $parish = mysqli_real_escape_string($con, $_POST['parish']);
+        $country = mysqli_real_escape_string($con, $_POST['country']);
+         
+        
         if(isset($_POST['gridCheck']) == "agreesave" ){
-            $success = "Please agree";
+            $isGridCheck = true;
+            // UPDATE Customers
+            // SET ContactName = 'Alfred Schmidt', City = 'Frankfurt'
+            // WHERE CustomerID = 1;
+            $updateUserInfo = mysqli_query($con, "UPDATE Users SET StreetNN = '".$streetNN."', CityT = '".$cityt."', Parish = '".$parish."', Country = '".$country."', isGridCheck = '".$isGridCheck."' WHERE user_id = '".$_SESSION['User_Id']."'");
+            
+            if($updateUserInfo){
+                $success = "Your profile was updated successdully";
+            }else{
+                $error = "Update was unsuccesful, please try again.";
+            }
+            
         }else{
-            $error = "Please agree to changes first";
+            $error = "Please agree by selecting the bax to continue.";
         }
         
-        // streetNN
-        //                                 cityT
-        //                                 parish
-        //                                 country
-        //                                 gridCheck
+        
     }
 
 
@@ -325,7 +338,7 @@ if(isset($_POST['logout'])){
 
                                 <!--Accounts page form-->
                                 <section id="acc-form" class="row">
-                                    <form class="row g-3">
+                                    <form class="row g-3" method="POST">
                                         <div class="col-md-12">
                                             <label for="inputEmail4" class="form-label">Email</label>
                                             <input type="email" class="form-control acc-input" id="inputEmail4"
@@ -385,13 +398,13 @@ if(isset($_POST['logout'])){
                                         </div>
                                         <div class="col-md-12">
                                             <label for="inputCity" class="form-label">Country</label>
-                                            <input type="text" class="form-control" id="country" id="country">
+                                            <input type="text" class="form-control" id="country" name="country">
                                         </div>
                                         
 
                                         <div class="col-12">
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="gridCheck" id="gridCheck" value="agreesave">
+<input class="form-check-input" type="checkbox" name="gridCheck" id="gridCheck" value="agreesave">
                                                 <label class="form-check-label" for="gridCheck">
                                                     I agree to changes made
                                                 </label>
@@ -422,3 +435,4 @@ if(isset($_POST['logout'])){
 </body>
 
 </html>
+
