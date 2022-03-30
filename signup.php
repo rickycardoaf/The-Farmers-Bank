@@ -65,7 +65,7 @@ session_start();
                
                     //save to database 
                     $password_hashed = password_hash($password, PASSWORD_DEFAULT);
-                    $user_id = random_num(20);
+                    $user_id = uniqid();
                     date_default_timezone_set("Jamaica");
                     $date = date("d/M/Y --- h:i:sa");
                     $query = "INSERT INTO Users (User_Id,First_Name, Last_Name,Email_Address, User_Password, Reg_date) values ('$user_id', '$fname', '$lname','$email','$password_hashed', '$date')";
