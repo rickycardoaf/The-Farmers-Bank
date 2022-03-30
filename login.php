@@ -27,7 +27,7 @@ session_start();
 
             //read from database 
             // fix OR clause
-            $checkForEmail = mysqli_query($con, "SELECT User_Id, Email_Address, User_Password FROM Users WHERE Email_Address = '".$useremail."'");
+            $checkForEmail = mysqli_query($con, "SELECT User_Id, Email_Address, User_Password, First_Name, Last_Name FROM Users WHERE Email_Address = '".$useremail."'");
             //$checkForEmail = mysqli_query($con, "SELECT user_id, user_name, password, email FROM users WHERE user_name = '".$user_name."' OR email = '".$user_name."'");
 
             if($checkForEmail){
@@ -39,6 +39,8 @@ session_start();
                         $dbpass = $row['User_Password'];
                         $u_id = $row['User_Id'];
                         $dbemaladd = $row['Email_Address'];
+                        $fName = $row['First_Name'];
+                        $lName = $row['Last_Name'];
                       }
                     
                       
@@ -46,7 +48,14 @@ session_start();
                         if(password_verify($password, $dbpass)){ 
                            
                             $_SESSION['Email_Address'] = $dbemaladd;
-                             $_SESSION['User_Id'] = $u_id;
+                            $_SESSION['User_Id'] = $u_id;
+                            $_SESSION['fName'] = $fName;
+                            $_SESSION['lName'] = $lName;
+                            
+                            // echo $_SESSION['Email_Address']."<br>";
+                            // echo $_SESSION['User_Id']."<br>";
+                            // echo $_SESSION['fName']."<br>";
+                            // echo $_SESSION['lName'];
                             
                             header('Location:index2.php');
                             

@@ -64,3 +64,26 @@
 [20-Mar-2022 12:13:48 America/Chicago] PHP Notice:  Undefined variable: userEM in /home1/hummions/public_html/hwBackup/FarmersBank/index2.php on line 48
 [20-Mar-2022 12:14:35 America/Chicago] PHP Notice:  Undefined variable: userEM in /home1/hummions/public_html/hwBackup/FarmersBank/index2.php on line 48
 [20-Mar-2022 12:14:35 America/Chicago] PHP Notice:  Undefined variable: userLgId in /home1/hummions/public_html/hwBackup/FarmersBank/index2.php on line 118
+[28-Mar-2022 17:27:50 America/Chicago] PHP Notice:  Undefined variable: userName in /home1/hummions/public_html/hwBackup/FarmersBank/index2.php on line 325
+[28-Mar-2022 17:27:55 America/Chicago] PHP Notice:  Undefined variable: userName in /home1/hummions/public_html/hwBackup/FarmersBank/index2.php on line 325
+[28-Mar-2022 17:28:33 America/Chicago] PHP Notice:  Undefined variable: userName in /home1/hummions/public_html/hwBackup/FarmersBank/index2.php on line 325
+[28-Mar-2022 17:30:06 America/Chicago] PHP Notice:  Undefined variable: userName in /home1/hummions/public_html/hwBackup/FarmersBank/index2.php on line 325
+[28-Mar-2022 17:31:33 America/Chicago] PHP Notice:  Undefined variable: userName in /home1/hummions/public_html/hwBackup/FarmersBank/index2.php on line 325
+[28-Mar-2022 17:36:09 America/Chicago] PHP Parse error:  syntax error, unexpected '}' in /home1/hummions/public_html/hwBackup/FarmersBank/index2.php on line 37
+[28-Mar-2022 17:36:21 America/Chicago] PHP Parse error:  syntax error, unexpected '}' in /home1/hummions/public_html/hwBackup/FarmersBank/index2.php on line 37
+[28-Mar-2022 17:39:14 America/Chicago] PHP Notice:  Undefined variable: userName in /home1/hummions/public_html/hwBackup/FarmersBank/index2.php on line 327
+[28-Mar-2022 17:41:37 America/Chicago] PHP Notice:  Undefined variable: userName in /home1/hummions/public_html/hwBackup/FarmersBank/index2.php on line 327
+[28-Mar-2022 17:42:41 America/Chicago] PHP Notice:  Undefined variable: userName in /home1/hummions/public_html/hwBackup/FarmersBank/index2.php on line 327
+[28-Mar-2022 17:42:43 America/Chicago] PHP Notice:  Undefined variable: userName in /home1/hummions/public_html/hwBackup/FarmersBank/index2.php on line 327
+[28-Mar-2022 17:42:44 America/Chicago] PHP Notice:  Undefined variable: userName in /home1/hummions/public_html/hwBackup/FarmersBank/index2.php on line 327
+[28-Mar-2022 17:45:26 America/Chicago] PHP Notice:  Undefined variable: userName in /home1/hummions/public_html/hwBackup/FarmersBank/index2.php on line 327
+[28-Mar-2022 17:46:37 America/Chicago] PHP Notice:  Undefined variable: userName in /home1/hummions/public_html/hwBackup/FarmersBank/index2.php on line 327
+[28-Mar-2022 17:58:07 America/Chicago] PHP Parse error:  syntax error, unexpected '{' in /home1/hummions/public_html/hwBackup/FarmersBank/index2.php on line 327
+[28-Mar-2022 18:01:13 America/Chicago] PHP Parse error:  syntax error, unexpected '{' in /home1/hummions/public_html/hwBackup/FarmersBank/index2.php on line 327
+[28-Mar-2022 18:01:51 America/Chicago] PHP Parse error:  syntax error, unexpected '{' in /home1/hummions/public_html/hwBackup/FarmersBank/index2.php on line 327
+[28-Mar-2022 18:01:53 America/Chicago] PHP Parse error:  syntax error, unexpected '{' in /home1/hummions/public_html/hwBackup/FarmersBank/index2.php on line 327
+[29-Mar-2022 18:05:01 America/Chicago] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home1/hummions/public_html/hwBackup/FarmersBank/index2.php on line 38
+[29-Mar-2022 18:05:25 America/Chicago] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home1/hummions/public_html/hwBackup/FarmersBank/index2.php on line 38
+[29-Mar-2022 18:06:07 America/Chicago] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home1/hummions/public_html/hwBackup/FarmersBank/index2.php on line 38
+[29-Mar-2022 18:06:22 America/Chicago] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home1/hummions/public_html/hwBackup/FarmersBank/index2.php on line 38
+[29-Mar-2022 18:39:44 America/Chicago] PHP Parse error:  syntax error, unexpected '<', expecting end of file in /home1/hummions/public_html/hwBackup/FarmersBank/index2.php on line 329

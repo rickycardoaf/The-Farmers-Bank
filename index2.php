@@ -11,11 +11,23 @@ include("functions.php");
 $userLgId = "";
 $userEM = "";
     
+                                                
+           
+               
+                                              
+                                            
+                                            
     if(isset($_SESSION['User_id']) && isset($_SESSION['Email_Address'])){
  
         $userEM = $_SESSION['Email_Address'];
         $userLgId = $_SESSION['User_Id'];
+        echo $_SESSION['Email_Address']."<br>";
+                            echo $_SESSION['User_Id']."<br>";
+                            echo $_SESSION['fName']."<br>";
+                            echo $_SESSION['lName'];
+        
     }
+    
 
     
 //   $user_data = check_login($con);
@@ -27,6 +39,21 @@ if(isset($_POST['logout'])){
     session_destroy();
     header("Location: logout.php");
 }
+
+    if(isset($_POST['saveBtn'])){
+        if(isset($_POST['gridCheck']) == "agreesave" ){
+            $success = "Please agree";
+        }else{
+            $error = "Please agree to changes first";
+        }
+        
+        // streetNN
+        //                                 cityT
+        //                                 parish
+        //                                 country
+        //                                 gridCheck
+    }
+
 
 ?>
 <!DOCTYPE html>
@@ -53,9 +80,12 @@ if(isset($_POST['logout'])){
 
     <title><?php
     
-    if(isset($_SESSION['Email_Address'])){
+    if(isset($_SESSION['fName'])){
        
-       echo $_SESSION['Email_Address'];
+       echo $_SESSION['fName'];
+    }else {
+        echo "Nothing found";
+    
     }
     
     ?></title>
@@ -282,6 +312,7 @@ if(isset($_POST['logout'])){
                             aria-labelledby="v-pills-messages-tab">
                             <nav class="navbar navbar-light">
                                 <div class="container-fluid">
+                                    
                                     <a class="navbar-brand">
                                         <h3>Accounts</h3>
                                     </a>
@@ -298,44 +329,76 @@ if(isset($_POST['logout'])){
                                         <div class="col-md-12">
                                             <label for="inputEmail4" class="form-label">Email</label>
                                             <input type="email" class="form-control acc-input" id="inputEmail4"
-                                                value="(User's Email)" readonly>
+                                                value="<?php 
+    
+    if(isset($_SESSION['Email_Address'])){
+       
+       echo $_SESSION['Email_Address'];
+    }
+    
+    ?>" readonly>
                                         </div>
                                         <div class="col-md-12">
                                             <label for="fullname" class="form-label">First and Last Name</label>
-                                            <input type="text" class="form-control" id="fullname">
-                                        </div>
+                                            <input type="text" class="form-control" id="fullname" value="<?php
+    
+    if(isset($_SESSION['fName']) && isset($_SESSION['lName'])){
+       
+       echo $_SESSION['fName']." ".$_SESSION['lName'];
+    }else {
+        echo "Nothing found";
+    
+    }
+    
+    ?>" disabled>
+                                                                            </div>
                                         <div class="col-12">
-                                            <label for="inputAddress" class="form-label">Address</label>
-                                            <input type="text" class="form-control" id="inputAddress"
-                                                placeholder="1234 Main St">
+                                            <label for="inputAddress" class="form-label">Strest name and number</label>
+                                            <input type="text" class="form-control" id="streetNN" name="streetNN"
+                                                placeholder="1st Young Street">
                                         </div>
+                                        
                                         <div class="col-12">
-                                            <label for="inputAddress2" class="form-label">Address 2</label>
-                                            <input type="text" class="form-control" id="inputAddress2"
-                                                placeholder="Apartment, studio, or floor">
-                                        </div>
-                                        <div class="col-md-12">
-                                            <label for="inputCity" class="form-label">City</label>
-                                            <input type="text" class="form-control" id="inputCity">
+                                            <label for="inputAddress2" class="form-label">City/Town</label>
+                                            <input type="text" class="form-control" id="cityT" name="cityT"
+                                                placeholder="Spanish town/Portmore">
                                         </div>
                                         <div class="col-md-4">
-                                            <label for="inputState" class="form-label">State</label>
-                                            <select id="inputState" class="form-select">
+                                            <label for="inputState" class="form-label">Parish</label>
+                                            <select id="parish" name="parish" class="form-select">
                                                 <option selected>Choose...</option>
-                                                <option>...</option>
+                                                <option value="Clarendon">Clarendon</option>
+                                        <option value="Hanover">Hanover</option>
+                                        <option value="Kingston">Kingston</option>
+                                        <option value="Manchester">Manchester</option>
+                                        <option value="Portland">Portland</option>
+                                        <option value="Saint Andrew">Saint Andrew</option>
+                                        <option value="Saint Ann">Saint Ann</option>
+                                        <option value="Saint Catherine">Saint Catherine</option>
+                                        <option value="Saint Elizabeth">Saint Elizabeth</option>
+                                        <option value="Saint James">Saint James</option>
+                                        <option value="Saint Mary">Saint Mary</option>
+                                        <option value="Saint Thomas">Saint Thomas</option>
+                                        <option value="Trelawny">Trelawny</option>
+                                        <option value="Westmoreland">Westmoreland</option>
                                             </select>
                                         </div>
+                                        <div class="col-md-12">
+                                            <label for="inputCity" class="form-label">Country</label>
+                                            <input type="text" class="form-control" id="country" id="country">
+                                        </div>
+                                        
 
                                         <div class="col-12">
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="gridCheck">
+                                                <input class="form-check-input" type="checkbox" name="gridCheck" id="gridCheck" value="agreesave">
                                                 <label class="form-check-label" for="gridCheck">
                                                     I agree to changes made
                                                 </label>
                                             </div>
                                         </div>
                                         <div class="col-12">
-                                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                                            <button type="submit" id="saveBtn" name="saveBtn" class="btn btn-primary">Save Changes</button>
                                         </div>
                                     </form>
                                 </section>
