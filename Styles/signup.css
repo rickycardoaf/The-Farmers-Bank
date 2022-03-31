@@ -16,7 +16,9 @@ label[for="email"],
 label[for="password"],
 label[for="user_name"],
 label[for="fname"],
-label[for="lname"] {
+label[for="lname"],
+label[for="inputState"],
+label[for="answer"] {
   font-weight: bold;
 }
 
