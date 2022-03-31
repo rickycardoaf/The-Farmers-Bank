@@ -447,58 +447,58 @@ if(isset($_POST['logout'])){
                                 </div>
                             </nav>
 
-                            <nav class="navbar navbar-light">
-                                <div class="container-fluid">
-                                    <a class="navbar-brand">
-                                        <h5>Change Password</h5>
-                                    </a>
-                                </div>
+                            <section class="tab-pane fade" id="v-pills-settings" role="tabpanel"
+                                aria-labelledby="v-pills-settings-tab">
+                                <nav class="navbar navbar-light">
+                                    <div class="container-fluid">
+                                        <a class="navbar-brand">
+                                            <h3>Settings</h3>
+                                        </a>
+                                    </div>
+                                </nav>
 
-                                <section class="row">
-                                    <form class="row g-3">
+                                <nav class="navbar navbar-light">
+                                    <div class="container-fluid">
+                                        <a class="navbar-brand">
+                                            <h5>Change Password</h5>
+                                        </a>
+                                    </div>
 
-                                        <div class="col-md-4">
-                                            <label for="inputState" class="form-label">Security Question</label>
-                                            <select id="inputState" class="form-select">
-                                                <option selected>Choose...</option>
-                                                <option>(Security Question1 Based on Users Choice)</option>
-                                                <option>(Security Question2 Based on Users Choice)</option>
-                                                <option>(Security Question3 Based on Users Choice)</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <label for="answwer" class="form-label">Answer</label>
-                                            <input type="text" class="form-control" id="answer">
-                                        </div>
-                                        <div class="col-md-12">
-                                            <label for="currentpassword" class="form-label">Current Password</label>
-                                            <input type="password" class="form-control acc-input" id="currentpassword">
-                                        </div>
-                                        <div class="col-md-12">
-                                            <label for="newpassword1" class="form-label">New Password</label>
-                                            <input type="password" class="form-control" id="newpassword1">
-                                        </div>
-                                        <div class="col-12">
-                                            <label for="newpassword2" class="form-label">Re-Enter Password</label>
-                                            <input type="password" class="form-control" id="newpassword2">
-                                        </div>
+                                    <section class="row">
+                                        <form class="row g-3">
 
-
-                                        <div class="col-12">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="gridCheck">
-                                                <label class="form-check-label" for="gridCheck">
-                                                    Yes I want to change password
-                                                </label>
+                                            <div class="col-md-4">
+                                                <label for="inputState" class="form-label">Security Question</label>
+                                                <select id="inputState" class="form-select">
+                                                    <option selected>Choose...</option>
+                                                    <option>In what city were you born?</option>
+                                                    <option>What is the name of your favorite pet?</option>
+                                                    <option>What high school did you attend?</option>
+                                                    <option>What is the name of your first school?</option>
+                                                    <option>What was the make of your first car?</option>
+                                                    <option>What was your favorite food as a child?</option>
+                                                </select>
                                             </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <button type="submit" class="btn btn-primary">Change Password</button>
-                                        </div>
-                                    </form>
-                                </section>
-                            </nav>
-                        </section>
+                                            <div class="col-md-12">
+                                                <label for="answwer" class="form-label">Answer</label>
+                                                <input type="text" class="form-control" id="answer">
+                                            </div>
+                                            <div class="col-md-12">
+                                                <label for="newpassword1" class="form-label">New Password</label>
+                                                <input type="password" class="form-control" id="newpassword1">
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="newpassword2" class="form-label">Re-Enter Password</label>
+                                                <input type="password" class="form-control" id="newpassword2">
+                                            </div>
+
+                                            <div class="col-12">
+                                                <button type="submit" class="btn btn-primary">Change Password</button>
+                                            </div>
+                                        </form>
+                                    </section>
+                                </nav>
+                            </section>
         </main>
     </div>
 
