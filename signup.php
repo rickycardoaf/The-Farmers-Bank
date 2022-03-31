@@ -204,6 +204,58 @@ session_start();
                                         <input type="password" name="password" id="password" placeholder="Password"
                                             required />
                                     </div>
+
+                                    <div class="col-md-5">
+                                        <label for="inputState" class="form-label">Security Question 1</label>
+                                        <select id="inputState" class="form-select">
+                                            <option selected>Choose...</option>
+                                            <option>In what city were you born?</option>
+                                            <option>What is the name of your favorite pet?</option>
+                                            <option>What high school did you attend?</option>
+                                            <option>What is the name of your first school?</option>
+                                            <option>What was the make of your first car?</option>
+                                            <option>What was your favorite food as a child?</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <label for="answwer" class="form-label">Answer</label>
+                                        <input type="text" class="form-control" id="answer">
+                                    </div>
+
+                                    <div class="col-md-5">
+                                        <label for="inputState" class="form-label">Security Question 2</label>
+                                        <select id="inputState" class="form-select">
+                                            <option selected>Choose...</option>
+                                            <option>In what city were you born?</option>
+                                            <option>What is the name of your favorite pet?</option>
+                                            <option>What high school did you attend?</option>
+                                            <option>What is the name of your first school?</option>
+                                            <option>What was the make of your first car?</option>
+                                            <option>What was your favorite food as a child?</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <label for="answwer" class="form-label">Answer</label>
+                                        <input type="text" class="form-control" id="answer">
+                                    </div>
+
+                                    <div class="col-md-5">
+                                        <label for="inputState" class="form-label">Security Question 3</label>
+                                        <select id="inputState" class="form-select">
+                                            <option selected>Choose...</option>
+                                            <option>In what city were you born?</option>
+                                            <option>What is the name of your favorite pet?</option>
+                                            <option>What high school did you attend?</option>
+                                            <option>What is the name of your first school?</option>
+                                            <option>What was the make of your first car?</option>
+                                            <option>What was your favorite food as a child?</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <label for="answwer" class="form-label">Answer</label>
+                                        <input type="text" class="form-control" id="answer">
+                                    </div>
+
                                     <div class="mb-3">
                                         <button type="submit" class="btn btn-block text-uppercase">
                                             Create an account
