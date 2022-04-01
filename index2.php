@@ -66,6 +66,48 @@ if(isset($_POST['logout'])){
         
         
     }
+    
+    //Change password answer securQues chanBtn
+    if(isset($_POST['chanBtn'])){
+        
+        $newpassword1 = mysqli_real_escape_string($con, $_POST['newpassword1']);
+        $newpassword2 = mysqli_real_escape_string($con, $_POST['newpassword2']);
+         
+        $uppC = preg_match('@[A-Z]@', $newpassword1);
+        $number = preg_match('@[0-9]@', $newpassword1);
+        $uppC2 = preg_match('@[A-Z]@', $newpassword2);
+        $number2 = preg_match('@[0-9]@', $newpassword2);
+        
+           if($newpassword1 != $newpassword2){
+               
+                $error = "Passwords do not match";
+                   
+            }elseif(!$uppC || !$number || strlen($newpassword1) < 6){
+                $error = "Password should be at least 6 characters in length and should include at least one upper case letter and a number";
+            }elseif(!$uppC2 || !$number2 || strlen($newpassword2) < 6){
+                
+                $error = "Password should be at least 6 characters in length and should include at least one upper case letter and a number";
+            }elseif($newpassword1 == ""){
+                $error = "Password is required";
+            }elseif($newpassword2 == ""){
+                $error = "Confirm Password is requred";
+                }else{
+                $password_hashed = password_hash($newpassword1, PASSWORD_DEFAULT);
+                $updateUserInfo = mysqli_query($con, "UPDATE Users SET User_Password = '".$password_hashed."' WHERE user_id = '".$_SESSION['User_Id']."'");
+                
+                if($updateUserInfo){
+                    $success = "Your profile was updated successdully";
+                }else{
+                    $error = "Update was unsuccesful, please try again.";
+                }
+           }
+            
+            
+            
+        }
+        
+        
+    
 
 
 ?>
@@ -127,7 +169,7 @@ if(isset($_POST['logout'])){
         <nav class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
-                    <img src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24"
+                    <img src="images/logo.jpg" alt="" width="30" height="24"
                         class="d-inline-block align-text-top">
                     Farmers Bank
                 </a>
@@ -447,58 +489,34 @@ if(isset($_POST['logout'])){
                                 </div>
                             </nav>
 
-                            <section class="tab-pane fade" id="v-pills-settings" role="tabpanel"
-                                aria-labelledby="v-pills-settings-tab">
-                                <nav class="navbar navbar-light">
-                                    <div class="container-fluid">
-                                        <a class="navbar-brand">
-                                            <h3>Settings</h3>
-                                        </a>
-                                    </div>
-                                </nav>
+                            <nav class="navbar navbar-light">
+                                <div class="container-fluid">
+                                    <a class="navbar-brand">
+                                        <h5>Change Password</h5>
+                                    </a>
+                                </div>
+                       <section class="row">
+                                    <form class="row g-3" method="POST">
 
-                                <nav class="navbar navbar-light">
-                                    <div class="container-fluid">
-                                        <a class="navbar-brand">
-                                            <h5>Change Password</h5>
-                                        </a>
-                                    </div>
+                                        
+                                        <div class="col-md-12">
+                                            <label for="newpassword1" class="form-label">New Password</label>
+                                            <input type="password" class="form-control" id="newpassword1" name="newpassword1">
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="newpassword2" class="form-label">Re-Enter Password</label>
+                                            <input type="password" class="form-control" id="newpassword2" name="newpassword2">
+                                        </div>
 
-                                    <section class="row">
-                                        <form class="row g-3">
 
-                                            <div class="col-md-4">
-                                                <label for="inputState" class="form-label">Security Question</label>
-                                                <select id="inputState" class="form-select">
-                                                    <option selected>Choose...</option>
-                                                    <option>In what city were you born?</option>
-                                                    <option>What is the name of your favorite pet?</option>
-                                                    <option>What high school did you attend?</option>
-                                                    <option>What is the name of your first school?</option>
-                                                    <option>What was the make of your first car?</option>
-                                                    <option>What was your favorite food as a child?</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <label for="answwer" class="form-label">Answer</label>
-                                                <input type="text" class="form-control" id="answer">
-                                            </div>
-                                            <div class="col-md-12">
-                                                <label for="newpassword1" class="form-label">New Password</label>
-                                                <input type="password" class="form-control" id="newpassword1">
-                                            </div>
-                                            <div class="col-12">
-                                                <label for="newpassword2" class="form-label">Re-Enter Password</label>
-                                                <input type="password" class="form-control" id="newpassword2">
-                                            </div>
-
-                                            <div class="col-12">
-                                                <button type="submit" class="btn btn-primary">Change Password</button>
-                                            </div>
-                                        </form>
-                                    </section>
-                                </nav>
-                            </section>
+                                       
+                                        <div class="col-12">
+                                            <button type="submit" id="chanBtn"  name="chanBtn" class="btn btn-primary">Change Password</button>
+                                        </div>
+                                    </form>
+                                </section>
+                            </nav>
+                        </section>
         </main>
     </div>
 

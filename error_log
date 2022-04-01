@@ -87,3 +87,13 @@
 [29-Mar-2022 18:06:07 America/Chicago] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home1/hummions/public_html/hwBackup/FarmersBank/index2.php on line 38
 [29-Mar-2022 18:06:22 America/Chicago] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home1/hummions/public_html/hwBackup/FarmersBank/index2.php on line 38
 [29-Mar-2022 18:39:44 America/Chicago] PHP Parse error:  syntax error, unexpected '<', expecting end of file in /home1/hummions/public_html/hwBackup/FarmersBank/index2.php on line 329
+[29-Mar-2022 21:05:47 America/Chicago] PHP Notice:  Undefined index: User_Id in /home1/hummions/public_html/hwBackup/FarmersBank/index2.php on line 165
+[29-Mar-2022 21:05:47 America/Chicago] PHP Notice:  Undefined index: User_Id in /home1/hummions/public_html/hwBackup/FarmersBank/index2.php on line 221
+[29-Mar-2022 21:06:24 America/Chicago] PHP Notice:  Undefined index: User_Id in /home1/hummions/public_html/hwBackup/FarmersBank/index2.php on line 165
+[29-Mar-2022 21:06:24 America/Chicago] PHP Notice:  Undefined index: User_Id in /home1/hummions/public_html/hwBackup/FarmersBank/index2.php on line 221
+[29-Mar-2022 22:12:51 America/Chicago] PHP Notice:  Undefined index: country in /home1/hummions/public_html/hwBackup/FarmersBank/index2.php on line 47
+[29-Mar-2022 23:32:16 America/Chicago] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home1/hummions/public_html/hwBackup/FarmersBank/functions.php on line 41
+[30-Mar-2022 00:01:57 America/Chicago] PHP Parse error:  syntax error, unexpected '$user_id' (T_VARIABLE) in /home1/hummions/public_html/hwBackup/FarmersBank/signup.php on line 95
+[30-Mar-2022 00:35:38 America/Chicago] PHP Notice:  Undefined index: User_id in /home1/hummions/public_html/hwBackup/FarmersBank/index2.php on line 206
+[30-Mar-2022 00:40:11 America/Chicago] PHP Notice:  Undefined variable: rows in /home1/hummions/public_html/hwBackup/FarmersBank/index2.php on line 214
+[31-Mar-2022 23:13:24 America/Chicago] PHP Notice:  Undefined variable: password in /home1/hummions/public_html/hwBackup/FarmersBank/index2.php on line 91
