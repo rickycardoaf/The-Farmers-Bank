@@ -32,8 +32,14 @@ input[type="button"] {
 
 input[type="email"],
 input[type="text"],
-input[type="password"] {
+input[type="password"],
+input[type="number"],
+input[type="date"] {
   width: 612px;
+}
+
+#transferdropdwn {
+  display: block;
 }
 
 .heading-nav {

@@ -349,34 +349,238 @@ if(isset($_POST['logout'])){
 
                             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                                 <li class="nav-item" role="presentation">
-                                    <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
+                                    <button class="nav-link active" id="pills-account2account-tab" data-bs-toggle="pill"
                                         data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
                                         aria-selected="true">Account to Account</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                                    <button class="nav-link" id="pills-externaltransfer-tab" data-bs-toggle="pill"
                                         data-bs-target="#pills-profile" type="button" role="tab"
                                         aria-controls="pills-profile" aria-selected="false">External Transfer</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
+                                    <button class="nav-link" id="pills-recurringtransfer-tab" data-bs-toggle="pill"
                                         data-bs-target="#pills-contact" type="button" role="tab"
                                         aria-controls="pills-contact" aria-selected="false">Recurring Transfer</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
-                                        data-bs-target="#pills-contact" type="button" role="tab"
+                                    <button class="nav-link" id="pills-managebenn-tab" data-bs-toggle="pill"
+                                        data-bs-target="#pills-be" type="button" role="tab"
                                         aria-controls="pills-contact" aria-selected="false">Manage
                                         Beneficiaries</button>
                                 </li>
                             </ul>
+
                             <div class="tab-content" id="pills-tabContent">
                                 <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
-                                    aria-labelledby="pills-home-tab">...</div>
+                                    aria-labelledby="pills-account2account-tab">
+                                    <nav class="navbar navbar-light">
+                                        <div class="container-fluid">
+                                            <a class="navbar-brand">
+                                                <h5>Account to Account Transfer</h5>
+                                            </a>
+                                        </div>
+                                        <section class="row">
+                                            <form class="row g-3" method="POST">
+
+
+                                                <div class="col-md-3">
+                                                    <label for="transferfr" class="form-label">Transfer From</label>
+                                                    <select id="transferfr" class="form-select" name="transferfr">
+                                                        <option selected>Select account</option>
+                                                        <option value="">(Selection1 - User Account information and
+                                                            Name)</option>
+                                                        <option value="">(Selection2 - User Account information and
+                                                            Name)</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <label for="transferto" class="form-label">Transfer To</label>
+                                                    <select id="transferto" class="form-select" name="transferto">
+                                                        <option selected>Select receiver</option>
+                                                        <option value="">(Selection1 - Account information and
+                                                            Name transfering to)</option>
+                                                        <option value="">(Selection2 - Account information and
+                                                            Name transfering to)</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-12">
+                                                    <label for="amount" class="form-label">Amount</label>
+                                                    <input type="number" class="form-control" id="amount" name="amount">
+                                                </div>
+
+
+
+                                                <div class="col-12">
+                                                    <button type="submit" id="chanBtn" name="chanBtn"
+                                                        class="btn btn-primary">Continue</button>
+                                                </div>
+                                            </form>
+                                        </section>
+                                    </nav>
+                                </div>
+
                                 <div class="tab-pane fade" id="pills-profile" role="tabpanel"
-                                    aria-labelledby="pills-profile-tab">...</div>
+                                    aria-labelledby="pills-externaltransfer-tab">
+                                    <nav class="navbar navbar-light">
+                                        <div class="container-fluid">
+                                            <a class="navbar-brand">
+                                                <h5>External Transfers</h5>
+                                            </a>
+                                        </div>
+                                        <section class="row">
+                                            <form class="row g-3" method="POST">
+
+
+                                                <div class="col-md-3">
+                                                    <label for="transferfr" class="form-label">Transfer From</label>
+                                                    <select id="transferfr" class="form-select" name="transferfr">
+                                                        <option selected>Select account</option>
+                                                        <option value="">Selection1 - User Account information and Name
+                                                        </option>
+                                                        <option value="">Selection2 - User Account information and Name
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <label for="transferto" class="form-label">Transfer To</label>
+                                                    <select id="transferto" class="form-select" name="transferto">
+                                                        <option selected>Select receiver</option>
+                                                        <option value="">(Selection2 - Account information and
+                                                            Name transfering to)</option>
+                                                        <option value="">(Selection2 - Account information and
+                                                            Name transfering to)</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-12">
+                                                    <label for="amount" class="form-label">Amount</label>
+                                                    <input type="number" class="form-control" id="amount" name="amount">
+                                                </div>
+
+
+
+                                                <div class="col-12">
+                                                    <button type="submit" id="chanBtn" name="chanBtn"
+                                                        class="btn btn-primary">Continue</button>
+                                                </div>
+                                            </form>
+                                        </section>
+                                    </nav>
+                                </div>
+
                                 <div class="tab-pane fade" id="pills-contact" role="tabpanel"
-                                    aria-labelledby="pills-contact-tab">...</div>
+                                    aria-labelledby="pills-recurringtransfer-tab">
+                                    <nav class="navbar navbar-light">
+                                        <div class="container-fluid">
+                                            <a class="navbar-brand">
+                                                <h5>Recurring Transfers</h5>
+                                            </a>
+                                        </div>
+                                        <section class="row">
+                                            <form class="row g-3" method="POST">
+
+
+                                                <div class="col-md-3">
+                                                    <label for="transferfr" class="form-label">Transfer From</label>
+                                                    <select id="transferfr" class="form-select" name="transferfr">
+                                                        <option selected>Select account</option>
+                                                        <option value="">(Selection1 - User Account information and
+                                                            Name)</option>
+                                                        <option value="">(Selection2 - User Account information and
+                                                            Name)</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <label for="transferto" class="form-label">Transfer To</label>
+                                                    <select id="transferto" class="form-select" name="transferto">
+                                                        <option selected>Select receiver</option>
+                                                        <option value="">(Selection1 - Account information and
+                                                            Name transfering to)</option>
+                                                        <option value="">(Selection2 - Account information and
+                                                            Name transfering to)</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-12">
+                                                    <label for="amount" class="form-label">Amount</label>
+                                                    <input type="number" class="form-control" id="amount" name="amount">
+                                                </div>
+                                                <div class="col-xl-6">
+                                                    <label for="acctype" class="form-label">Frequency</label>
+                                                    <select id="acctype" name="acctype" class="form-select">
+                                                        <option selected>Choose...</option>
+                                                        <option value="Internal">Daily</option>
+                                                        <option value="External">Weekly</option>
+                                                        <option value="External">Fortnightly</option>
+                                                        <option value="External">Monthly</option>
+                                                        <option value="External">Quarterly</option>
+                                                        <option value="External">Half Yearly</option>
+                                                        <option value="External">Yearly</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-xl-12">
+                                                    <label for="startdate" class="form-label">Start Date</label>
+                                                    <input type="date" class="form-control" id="startdate"
+                                                        name="startdate">
+                                                </div>
+                                                <div class="col-xl-12">
+                                                    <label for="enddate" class="form-label">End Date</label>
+                                                    <input type="date" class="form-control" id="enddate" name="enddate">
+                                                </div>
+
+
+
+                                                <div class="col-12">
+                                                    <button type="submit" id="chanBtn" name="chanBtn"
+                                                        class="btn btn-primary">Continue</button>
+                                                </div>
+                                            </form>
+                                        </section>
+                                    </nav>
+                                </div>
+
+                                <div class="tab-pane fade" id="pills-be" role="tabpanel"
+                                    aria-labelledby="pills-managebenn-tab">
+                                    <nav class="navbar navbar-light">
+                                        <div class="container-fluid">
+                                            <a class="navbar-brand">
+                                                <h5>Manage Beneficiaries</h5>
+                                            </a>
+                                        </div>
+                                        <section class="row">
+                                            <form class="row g-3" method="POST">
+
+
+                                                <div class="col-md-6">
+                                                    <label for="acctype" class="form-label">Account Type</label>
+                                                    <select id="acctype" name="acctype" class="form-select">
+                                                        <option selected>Choose...</option>
+                                                        <!--Based on selection should add information to external transfer or account to account-->
+                                                        <option value="Internal">Internal</option>
+                                                        <option value="External">External</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <label for="holdername" class="form-label">Account Holder
+                                                        Name</label>
+                                                    <input type="text" class="form-control" id="holdername"
+                                                        name="holdername">
+                                                </div>
+                                                <div class="col-12">
+                                                    <label for="accnumber" class="form-label">Account Number</label>
+                                                    <input type="number" class="form-control" id="accnumber"
+                                                        name="accnumber">
+                                                </div>
+
+
+
+                                                <div class="col-12">
+                                                    <button type="submit" id="chanBtn" name="chanBtn"
+                                                        class="btn btn-primary">Add Beneficiary</button>
+                                                </div>
+                                            </form>
+                                        </section>
+                                    </nav>
+                                </div>
                             </div>
                         </section>
 
