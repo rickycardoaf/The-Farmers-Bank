@@ -97,3 +97,47 @@
 [30-Mar-2022 00:35:38 America/Chicago] PHP Notice:  Undefined index: User_id in /home1/hummions/public_html/hwBackup/FarmersBank/index2.php on line 206
 [30-Mar-2022 00:40:11 America/Chicago] PHP Notice:  Undefined variable: rows in /home1/hummions/public_html/hwBackup/FarmersBank/index2.php on line 214
 [31-Mar-2022 23:13:24 America/Chicago] PHP Notice:  Undefined variable: password in /home1/hummions/public_html/hwBackup/FarmersBank/index2.php on line 91
+[02-Apr-2022 19:23:14 America/Chicago] PHP Parse error:  syntax error, unexpected end of file in /home1/hummions/public_html/hwBackup/FarmersBank/signup.php on line 230
+[02-Apr-2022 19:23:19 America/Chicago] PHP Parse error:  syntax error, unexpected end of file in /home1/hummions/public_html/hwBackup/FarmersBank/signup.php on line 230
+[02-Apr-2022 19:24:59 America/Chicago] PHP Parse error:  syntax error, unexpected end of file in /home1/hummions/public_html/hwBackup/FarmersBank/signup.php on line 231
+[02-Apr-2022 19:25:14 America/Chicago] PHP Parse error:  syntax error, unexpected end of file in /home1/hummions/public_html/hwBackup/FarmersBank/signup.php on line 210
+[02-Apr-2022 19:25:37 America/Chicago] PHP Parse error:  syntax error, unexpected end of file in /home1/hummions/public_html/hwBackup/FarmersBank/signup.php on line 210
+[02-Apr-2022 19:25:44 America/Chicago] PHP Parse error:  syntax error, unexpected end of file in /home1/hummions/public_html/hwBackup/FarmersBank/signup.php on line 210
+[02-Apr-2022 19:26:07 America/Chicago] PHP Parse error:  syntax error, unexpected end of file in /home1/hummions/public_html/hwBackup/FarmersBank/signup.php on line 230
+[02-Apr-2022 19:26:41 America/Chicago] PHP Parse error:  syntax error, unexpected end of file in /home1/hummions/public_html/hwBackup/FarmersBank/signup.php on line 230
+[02-Apr-2022 19:40:57 Jamaica] PHP Notice:  Undefined variable: flname in /home1/hummions/public_html/hwBackup/FarmersBank/signup.php on line 87
+[02-Apr-2022 19:44:11 Jamaica] PHP Notice:  Undefined variable: flname in /home1/hummions/public_html/hwBackup/FarmersBank/signup.php on line 87
+[02-Apr-2022 19:45:29 Jamaica] PHP Notice:  Undefined variable: flname in /home1/hummions/public_html/hwBackup/FarmersBank/signup.php on line 87
+[02-Apr-2022 20:00:23 Jamaica] PHP Notice:  Undefined variable: flname in /home1/hummions/public_html/hwBackup/FarmersBank/signup.php on line 87
+[02-Apr-2022 20:00:35 America/Chicago] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home1/hummions/public_html/hwBackup/FarmersBank/verified.php on line 7
+[02-Apr-2022 20:00:35 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home1/hummions/public_html/hwBackup/FarmersBank/verified.php on line 9
+[02-Apr-2022 20:00:41 America/Chicago] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home1/hummions/public_html/hwBackup/FarmersBank/verified.php on line 7
+[02-Apr-2022 20:00:41 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home1/hummions/public_html/hwBackup/FarmersBank/verified.php on line 9
+[02-Apr-2022 20:00:42 America/Chicago] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home1/hummions/public_html/hwBackup/FarmersBank/verified.php on line 7
+[02-Apr-2022 20:00:42 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home1/hummions/public_html/hwBackup/FarmersBank/verified.php on line 9
+[02-Apr-2022 20:03:51 America/Chicago] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home1/hummions/public_html/hwBackup/FarmersBank/verified.php on line 7
+[02-Apr-2022 20:03:51 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home1/hummions/public_html/hwBackup/FarmersBank/verified.php on line 9
+[02-Apr-2022 20:04:53 America/Chicago] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home1/hummions/public_html/hwBackup/FarmersBank/verified.php on line 7
+[02-Apr-2022 20:04:53 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home1/hummions/public_html/hwBackup/FarmersBank/verified.php on line 9
+[02-Apr-2022 20:04:55 America/Chicago] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home1/hummions/public_html/hwBackup/FarmersBank/verified.php on line 7
+[02-Apr-2022 20:04:55 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home1/hummions/public_html/hwBackup/FarmersBank/verified.php on line 9
+[02-Apr-2022 20:05:27 Jamaica] PHP Notice:  Undefined variable: flname in /home1/hummions/public_html/hwBackup/FarmersBank/signup.php on line 87
+[02-Apr-2022 20:07:07 Jamaica] PHP Notice:  Undefined variable: flname in /home1/hummions/public_html/hwBackup/FarmersBank/signup.php on line 87
+[02-Apr-2022 20:07:26 America/Chicago] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home1/hummions/public_html/hwBackup/FarmersBank/verified.php on line 7
+[02-Apr-2022 20:07:26 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home1/hummions/public_html/hwBackup/FarmersBank/verified.php on line 9
+[02-Apr-2022 20:07:32 America/Chicago] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home1/hummions/public_html/hwBackup/FarmersBank/verified.php on line 7
+[02-Apr-2022 20:07:32 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home1/hummions/public_html/hwBackup/FarmersBank/verified.php on line 9
+[02-Apr-2022 20:07:33 America/Chicago] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home1/hummions/public_html/hwBackup/FarmersBank/verified.php on line 7
+[02-Apr-2022 20:07:33 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home1/hummions/public_html/hwBackup/FarmersBank/verified.php on line 9
+[02-Apr-2022 20:33:34 Jamaica] PHP Notice:  Undefined variable: flname in /home1/hummions/public_html/hwBackup/FarmersBank/signup.php on line 89
+[02-Apr-2022 20:36:11 Jamaica] PHP Notice:  Undefined variable: flname in /home1/hummions/public_html/hwBackup/FarmersBank/signup.php on line 89
+[02-Apr-2022 20:38:20 Jamaica] PHP Notice:  Undefined variable: flname in /home1/hummions/public_html/hwBackup/FarmersBank/signup.php on line 90
+[02-Apr-2022 20:40:01 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home1/hummions/public_html/hwBackup/FarmersBank/verified.php on line 10
+[02-Apr-2022 20:41:35 Jamaica] PHP Notice:  Undefined variable: flname in /home1/hummions/public_html/hwBackup/FarmersBank/signup.php on line 90
+[02-Apr-2022 20:41:52 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home1/hummions/public_html/hwBackup/FarmersBank/verified.php on line 10
+[02-Apr-2022 20:41:57 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home1/hummions/public_html/hwBackup/FarmersBank/verified.php on line 10
+[02-Apr-2022 20:41:57 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home1/hummions/public_html/hwBackup/FarmersBank/verified.php on line 10
+[02-Apr-2022 20:43:07 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home1/hummions/public_html/hwBackup/FarmersBank/verified.php on line 9
+[02-Apr-2022 20:43:18 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home1/hummions/public_html/hwBackup/FarmersBank/verified.php on line 9
+[02-Apr-2022 20:43:18 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home1/hummions/public_html/hwBackup/FarmersBank/verified.php on line 9
+[02-Apr-2022 20:44:18 Jamaica] PHP Notice:  Undefined variable: flname in /home1/hummions/public_html/hwBackup/FarmersBank/signup.php on line 90

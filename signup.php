@@ -51,22 +51,53 @@ session_start();
             
             }else{
                 
-               
+                $user_id = random_num(10);
+
+
                     //save to database 
                     $password_hashed = password_hash($password, PASSWORD_DEFAULT);
-                    $user_id = random_num(20);
+
+                   
+                    
+                     
+  
+    
                     date_default_timezone_set("Jamaica");
                     $date = date("d/M/Y --- h:i:sa");
-                    $query = "INSERT INTO Users (User_Id,First_Name, Last_Name,Email_Address, User_Password, Reg_date) values ('$user_id', '$fname', '$lname','$email','$password_hashed', '$date')";
+                    $query = "INSERT INTO Users (User_Id,First_Name, Last_Name,Email_Address, User_Password, Reg_date, verifiedCode) values ('$user_id', '$fname', '$lname','$email','$password_hashed', '$date', '$user_id')";
+
                     if(mysqli_query($con, $query)){
+
+                         $checkForuser_id = mysqli_query($con, "SELECT U_TableId FROM Users WHERE Email_Address = '".$email."'");
+
+                        if(mysqli_num_rows($checkForuser_id) > 0){
+
+                            while($row = mysqli_fetch_assoc($checkForuser_id)){
+
+                                // $dbuname = $row['user_name'];
+                                $dbUser_Id = $row['U_TableId'];
+
+                              }
+
+                        }
+    $userNew_Id = $fname[0].$lname[0].$email[0]."-".$dbUser_Id."-".$user_id;
+                        $updateUserInfo = mysqli_query($con, "UPDATE Users SET User_Id = '".$userNew_Id."' WHERE U_TableId = '".$dbUser_Id."'");
+
+
                         mysqli_close($con);
                         $success = "Account created";
                         $name = "";
-                        $email = ""; 
-                        $password = "";
-                    }else{
-                        $error = "There was an issue with you registration.";
+                        $msg = "Hi $fname, \nThank you for sign up with Farmers Bank.\nhttps://carishield.com/hwBackup/FarmersBank/verified.php?id=$user_id";
+
+                    // use wordwrap() if lines are longer than 70 characters
+                    $msg = wordwrap($msg,70);
+                    
+                    // send email
+                    mail("$email","Welcome to Farmers Bank",$msg);
+                        
                     }
+
+
                     
                 
             }
