@@ -124,8 +124,8 @@ session_start();
 
 
                 <div class="card-body">
-                    <h4 class="title text-center mt-4">Welcome Back</h4>
-                    <p class="text-center">Welcome Back! Please enter your details</p>
+                    <h4 class="title text-center mt-4">Password Reset</h4>
+                    <p class="text-center">Please enter your details</p>
                     <form class="form-box px-3" method="post">
                         <div class="form-input">
                             <span><i class="fa fa-envelope-o"></i></span>
@@ -153,7 +153,7 @@ session_start();
                         </div>
 
                         <div class="text-right">
-                            <a href="#" class="forget-link"> Forget Password? </a>
+                            <a href="passreset.php" class="forget-link"> Forget Password? </a>
                         </div>
 
                         <hr class="my-4" />
