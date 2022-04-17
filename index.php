@@ -1,147 +1,119 @@
 <?php
-session_start();
-
-include("connection.php");
-include("functions.php");
-    
-   $user_data = check_login($con);
-
-   
+include("login-acc.php");
 
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title><?php if(isset($user_data['user_name']) && isset($_SESSION['user_id'])){
-
-        echo $user_data['user_name'];
-        $uid = $_SESSION['user_id'];
-        
-      }?></title>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-control" content="no-cache">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
 
-    <link rel="stylesheet" href="mainC.css">
-    <script>
-    document.addEventListener("click", e => {
-        const isDropdownButton = e.target.matches("[data-dropdown-button]")
-        if (!isDropdownButton && e.target.closest("[data-dropdown]") != null) return
 
-        let currentDropdown
-        if (isDropdownButton) {
-            currentDropdown = e.target.closest("[data-dropdown]")
-            currentDropdown.classList.toggle("active")
+    <link rel="stylesheet" href="Styles/style.css">
+  <style>
+      #shpw{
+            width: 15px;
+            height: 15px;
         }
+  </style>
 
-        document.querySelectorAll("[data-dropdown].active").forEach(dropdown => {
-            if (dropdown === currentDropdown) return
-            dropdown.classList.remove("active")
-        })
-    })
-    </script>
+    <title>Farmers Bank Login Page</title>
 </head>
 
 <body>
-    <div class="mainContent">
-        <div class="header">
-            <?php if(isset($user_data['user_name'])){
-            //echo $user_data['user_name'] ;
-                echo '<div id="userIfo">
-                      <u>'.$user_data['user_name'].'</u>
-                    </div>
-                    <a href="index.php" class="link" active>Accounts</a>
-                    <a href="transactions.php" class="link">Transactions</a>
-                    <div class="dropdown" data-dropdown>
-                        <button class="link" data-dropdown-button>Tranfers</button>
-                        <div class="dropdown-menu information-grid">
-                            <div>
-                                <div class="dropdown-links">
-                                    <a href="transfer.php" class="link">Within my bank</a>
-                                    <a href="#" class="link">Other Banks</a>
-                                    <a href="#" class="link">Manage Beneficiaries</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="loans.php" class="link">Loans</a>
-                    <a href="payments.php" class="link">Payments</a>
-                    <div class="dropdown" data-dropdown>
-                    <button class="link" data-dropdown-button>Account Settings</button>
-                    <div class="dropdown-menu information-grid">
-                        <div>
-                            <div class="dropdown-links">
-                                <a href="logout.php" class="link">Logout</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>';
+    <!-- <div id="h1t">
+         <h2 align="center" >Welcome to the Farmer's Bank Please login to continue</h2>
+     </div> -->
+    <?php
+                if(isset($error)){
                     
-                }else{
-                  header("Location: login.php");
-                  $error = "Please login to continue.";
+                    echo '<div class="alert alert-danger" role="alert">
+                    '.$error.'
+                  </div>';
+                }elseif(isset($success)){
+                    echo '<div class="alert alert-success" role="alert">
+                    '.$success.'
+                  </div>';
                 }
             ?>
-        </div>
 
-        <div class="contentView">
-            <div class="accInfo">
-                <table stye="">
-                    <tr>
-                        <th>Account type</th>
-                        <th>Account Num.</th>
-                        <th>Balance($)</th>
-                    </tr>
-                    <?php
-                  $checkForAccount = mysqli_query($con, "SELECT accountNum,accountType, accountBalance  FROM accountSum WHERE user_id = '".$uid."'");
+    <div class="container">
+        
+        <div class="row px-3">
+            <div class="col-lg-10 col-xl-9 card flex-row mx-auto px-0">
+                <div class="img-right d-none d-xl-flex d-lg-flex">
+                    <img class="img-fluid" src="images/nate-johnston-MRh6Kb16afE-unsplash - Copy.jpg" alt="">
+                </div>
 
-                  if($checkForAccount){
-              
-                      if(mysqli_num_rows($checkForAccount) > 0 ){
-              
-                          //$userFound = mysqli_fetch_assoc($checkForEmail); 
-                          while($row = mysqli_fetch_assoc($checkForAccount)) {
-                              $accNum = $row['accountNum'];
-                              $accType = $row['accountType'];
-                              $accBalance = $row['accountBalance'];
 
-                              echo'
-                                  <tr>
-                                    <td>'.$accType.'</td>
-                                    <td>'.$accNum.'</td>
-                                    <td>'.$accBalance.'</td>
-                                  </tr>
-                                ';
-                            }
-                      }
-                  }
-                ?>
-                </table>
+                <div class="card-body">
+                    <h4 class="title text-center mt-4">Farmers Bank</h4>
+                    <p class="text-center">Welcome Back. Please login to continue</p>
+                    <form class="form-box px-3" method="post">
+                        <div class="form-input">
+                            <span><i class="fa fa-envelope-o"></i></span>
+                            <label for="email">Email</label><br>
+                            <input type="email" name="useremail" id="useremail" placeholder="Email" tabindex="10"
+                                required />
+                        </div>
+                        <div class="form-input">
+                            <span><i class="fa fa-key"></i></span>
+                            <label for="password">Password</label><br>
+                            <input type="password" name="password" id="password" placeholder="Password" required /> <input type="checkbox" id="shpw" onclick="myFunction()">        Show Password
+     
+                        </div>
+
+                        <!--<div class="mb-3" >
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="remeberme" name="remeberme" />
+                                <label class="custom-control-label" for="cb1">Remember me</label>
+                            </div>
+                        </div>-->
+
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-block text-uppercase">
+                                Login
+                            </button>
+                        </div>
+
+                        <div class="text-right">
+                            <a href="fpss.php" class="forget-link"> Forget Password? </a>
+                        </div>
+
+                        <hr class="my-4" />
+
+                        <div class="text-center mb-2">
+                            Don't have an account?
+                            <a href="signup.php" class="register-link"> Register here </a>
+                        </div>
+                    </form>
+                </div>
             </div>
-
-
         </div>
     </div>
-    <script type="text/javascript">
-    function getDetail(user_id) {
-        $('#acc_id').html('');
-        $.ajax({
-            type: 'post',
-            url: 'index.php',
-            data: {
-                user_id: user_id
-            },
-            success: function(data) {
-                $('#acc_id').html(data);
-            }
-        })
-    }
-    </script>
+<script>
+   
+        function myFunction() {
+          var x = document.getElementById("password");
+          if (x.type === "password") {
+            x.type = "text";
+          } else {
+            x.type = "password";
+          }
+}
+</script>
+</script>
 </body>
 
 </html>

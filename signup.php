@@ -2,107 +2,11 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-session_start();
-    include("connection.php");
-    include("functions.php");
+//session_start();
+include("signup-acc.php");
  
-    if($_SERVER['REQUEST_METHOD'] == "POST")
-    {
-        //something was posted
-        $fname = mysqli_real_escape_string($con, $_POST['fname']);
-        $lname = mysqli_real_escape_string($con, $_POST['lname']);
-        $email = mysqli_real_escape_string($con, $_POST['email']);
-        $password = mysqli_real_escape_string($con,$_POST['password']);
-        // $password = mysqli_real_escape_string($con,$_POST['reg_password']);
-        //echo $name ." ". $email . " ".$user_name." " .$password;
-        // $select = mysqli_query($conn, "SELECT * FROM users WHERE email = '".$_POST['email']."'");
-        // if(mysqli_num_rows($select)) {
-        //     exit('This email address is already used!');
-        // }
-        $uppC = preg_match('@[A-Z]@', $password);
-        $number = preg_match('@[0-9]@', $password);
-        // validate fielf on the signup page
-        if($fname == "" || $lname == ""){
-            $error = "Your name is required";
-        }elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $error = "Invalid email format";
-        }elseif(!$uppC || !$number || strlen($password) < 6){
-            $error = "Password should be at least 6 characters in length and should include at least one upper case letter and a number";
-        }elseif($password == ""){
-            $error = "Password is required";
-        }else{
-            
-            
-            $checkForEmail = mysqli_query($con, "SELECT Email_Address FROM Users WHERE Email_Address = '".$email."'");
-        
-            if(mysqli_num_rows($checkForEmail) > 0){
-                while($row = mysqli_fetch_assoc($checkForEmail)){
-                    // $dbuname = $row['user_name'];
-                    $dbemail = $row['Email_Address'];
-                  }
-                //   check if username and email exist
-                  if($dbemail == $email){
-                    $error = "Email address already exist.";
-                  }
-                //   if($dbuname == $user_name){
-                //     $error = "Username address already exist.";
-                //   }
-                
-            
-            }else{
-                
-                $user_id = random_num(10);
-
-
-                    //save to database 
-                    $password_hashed = password_hash($password, PASSWORD_DEFAULT);
-
-                   
-                    
-                     
+ 
   
-    
-                    date_default_timezone_set("Jamaica");
-                    $date = date("d/M/Y --- h:i:sa");
-                    $query = "INSERT INTO Users (User_Id,First_Name, Last_Name,Email_Address, User_Password, Reg_date, verifiedCode) values ('$user_id', '$fname', '$lname','$email','$password_hashed', '$date', '$user_id')";
-
-                    if(mysqli_query($con, $query)){
-
-                         $checkForuser_id = mysqli_query($con, "SELECT U_TableId FROM Users WHERE Email_Address = '".$email."'");
-
-                        if(mysqli_num_rows($checkForuser_id) > 0){
-
-                            while($row = mysqli_fetch_assoc($checkForuser_id)){
-
-                                // $dbuname = $row['user_name'];
-                                $dbUser_Id = $row['U_TableId'];
-
-                              }
-
-                        }
-    $userNew_Id = $fname[0].$lname[0].$email[0]."-".$dbUser_Id."-".$user_id;
-                        $updateUserInfo = mysqli_query($con, "UPDATE Users SET User_Id = '".$userNew_Id."' WHERE U_TableId = '".$dbUser_Id."'");
-
-
-                        mysqli_close($con);
-                        $success = "Account created";
-                        $name = "";
-                        $msg = "Hi $fname, \nThank you for sign up with Farmers Bank.\nhttps://carishield.com/hwBackup/FarmersBank/verified.php?id=$user_id";
-
-                    // use wordwrap() if lines are longer than 70 characters
-                    $msg = wordwrap($msg,70);
-                    
-                    // send email
-                    mail("$email","Welcome to Farmers Bank",$msg);
-                        
-                    }
-
-
-                    
-                
-            }
-        }
-    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -123,6 +27,16 @@ session_start();
     <link rel="stylesheet" href="Styles/style.css">
     <link rel="stylesheet" href="Styles/signup.css">
     <title>Farmers Bank Registration Page</title>
+    
+    <style>
+         
+      #shpw{
+            width: 15px;
+            height: 15px;
+             padding-left: 40px!important;
+        }
+  </style>
+
 </head>
 <body>
     <!-- <div id="h1t">
@@ -160,7 +74,7 @@ session_start();
                     echo "";
                 }
             ?>
-                    <h2 class="title text-center mt-4">Welcome! To Farmers Bank</h2>
+                    <h2 class="title text-center mt-4">Welcome To Farmers Bank!</h2>
                     <h3 class="title text-center mt-4">Let's get started</h3>
                     <p class="text-center">Please enter your information</p>
                     <form class="form-box px-3" method="post">
@@ -183,15 +97,15 @@ session_start();
                                         <label for="email">Email</label>
                                         <input type="email" name="email" id="email" placeholder="Email" required />
                                     </div>
-                                    <div class="form-input">
-                                        <span><i class="fa fa-key"></i></span>
-                                        <label for="password">Password</label>
-                                        <input type="password" name="password" id="password" placeholder="Password"
-                                            required />
-                                    </div>
+                                   <div class="form-input">
+                            <span><i class="fa fa-key"></i></span>
+                            <label for="password">Password</label><br>
+                            <input type="password" name="password" id="password" placeholder="Password" required /> <input type="checkbox" id="shpw" onclick="myFunction()">         Show Password
+     
+                        </div>
 
                                     
-
+                               
                                    
                                     <div class="mb-3">
                                         <button type="submit" class="btn btn-block text-uppercase">
@@ -209,13 +123,24 @@ session_start();
                         </div> -->
                         <hr class="my-4" />
                         <div class="text-center mb-2">
-                            Already have an account?
-                            <a href="login.php" class="register-link"> Click here to sign in</a>
+                            Already have an account? Click
+                            <a href="index.php" class="login-link">  here </a>to sign in
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+   
+        function myFunction() {
+          var x = document.getElementById("password");
+          if (x.type === "password") {
+            x.type = "text";
+          } else {
+            x.type = "password";
+          }
+}
+</script>
 </body>
 </html>
